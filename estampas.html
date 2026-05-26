@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHOOM - Indumentaria K-pop Sustentable</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">CHOOM</div>
+            <ul class="nav-menu">
+                <li><a href="index.html#inicio" class="nav-link">Inicio</a></li>
+                <li><a href="index.html#productos" class="nav-link">Productos</a></li>
+                <li><a href="index.html#estampas" class="nav-link">Estampas DTF</a></li>
+                <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Estampas DTF Grupos -->
+    <section class="estampas-grupos">
+        <div class="container">
+            <h1>Elige tu Grupo K-pop Favorito</h1>
+            <p class="seccion-subtitle">Selecciona el grupo para ver disponibilidad de estampas</p>
+            
+            <div class="grupos-grid">
+                <div class="grupo-card" onclick="seleccionarGrupo('BTS')">
+                    <div class="grupo-icon">🎤</div>
+                    <h3>BTS</h3>
+                    <p>Bangtan Sonyeondan</p>
+                </div>
+
+                <div class="grupo-card" onclick="seleccionarGrupo('EXO')">
+                    <div class="grupo-icon">⭐</div>
+                    <h3>EXO</h3>
+                    <p>K-pop Legends</p>
+                </div>
+
+                <div class="grupo-card" onclick="seleccionarGrupo('SEVENTEEN')">
+                    <div class="grupo-icon">💫</div>
+                    <h3>SEVENTEEN</h3>
+                    <p>Carats</p>
+                </div>
+
+                <div class="grupo-card" onclick="seleccionarGrupo('ATEEZ')">
+                    <div class="grupo-icon">🔥</div>
+                    <h3>ATEEZ</h3>
+                    <p>Pirate Kings</p>
+                </div>
+
+                <div class="grupo-card" onclick="seleccionarGrupo('STRAY KIDS')">
+                    <div class="grupo-icon">🐺</div>
+                    <h3>STRAY KIDS</h3>
+                    <p>Stay</p>
+                </div>
+
+                <div class="grupo-card" onclick="seleccionarGrupo('TWICE')">
+                    <div class="grupo-icon">✨</div>
+                    <h3>TWICE</h3>
+                    <p>Once</p>
+                </div>
+
+                <div class="grupo-card" onclick="seleccionarGrupo('BLACKPINK')">
+                    <div class="grupo-icon">💎</div>
+                    <h3>BLACKPINK</h3>
+                    <p>Blinks</p>
+                </div>
+
+                <div class="grupo-card" onclick="seleccionarGrupo('NewJeans')">
+                    <div class="grupo-icon">👟</div>
+                    <h3>NewJeans</h3>
+                    <p>Hype Boy</p>
+                </div>
+
+                <div class="grupo-card" onclick="seleccionarGrupo('ENHYPEN')">
+                    <div class="grupo-icon">🌙</div>
+                    <h3>ENHYPEN</h3>
+                    <p>Engene</p>
+                </div>
+            </div>
+
+            <!-- Formulario Oculto -->
+            <div id="formulario-paquete" class="formulario-paquete hidden">
+                <div class="formulario-container">
+                    <button class="btn-cerrar" onclick="cerrarFormulario()">✕</button>
+                    <h2 id="grupo-nombre"></h2>
+                    <p>Elige la cantidad de estampas DTF</p>
+                    
+                    <div class="opciones-paquete">
+                        <div class="opcion-card" onclick="seleccionarPaquete(5)">
+                            <h3>Paquete x5</h3>
+                            <p class="cantidad">5 Estampas DTF</p>
+                            <p class="precio">$2.500</p>
+                            <button class="btn btn-primary">Seleccionar</button>
+                        </div>
+
+                        <div class="opcion-card" onclick="seleccionarPaquete(10)">
+                            <h3>Paquete x10</h3>
+                            <p class="cantidad">10 Estampas DTF</p>
+                            <p class="precio-original">$5.500</p>
+                            <p class="precio">$4.800</p>
+                            <p class="descuento">12% descuento</p>
+                            <button class="btn btn-primary">Seleccionar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 CHOOM - Indumentaria K-pop Sustentable. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="https://wa.me/542994578289" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let grupoSeleccionado = '';
+        let paqueteSeleccionado = '';
+
+        function seleccionarGrupo(grupo) {
+            grupoSeleccionado = grupo;
+            document.getElementById('grupo-nombre').textContent = `Estampas ${grupo}`;
+            document.getElementById('formulario-paquete').classList.remove('hidden');
+        }
+
+        function cerrarFormulario() {
+            document.getElementById('formulario-paquete').classList.add('hidden');
+            grupoSeleccionado = '';
+            paqueteSeleccionado = '';
+        }
+
+        function seleccionarPaquete(cantidad) {
+            paqueteSeleccionado = cantidad;
+            const mensaje = `Hola! Quiero solicitar estampas de ${grupoSeleccionado} - Paquete x${cantidad}`;
+            contactarWhatsapp(mensaje);
+            cerrarFormulario();
+        }
+
+        function contactarWhatsapp(mensaje) {
+            const numero = '542994578289';
+            const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
