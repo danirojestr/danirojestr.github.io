@@ -3,36 +3,229 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería de Imágenes</title>
+    <title>CHOOM - Indumentaria K-pop</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Mi Galería de Imágenes</h1>
-            <p>Bienvenido a mi portafolio</p>
-        </header>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="logo">🧵 CHOOM</div>
+            <ul class="nav-menu">
+                <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li><a href="#productos" class="nav-link">Productos</a></li>
+                <li><a href="#estampas" class="nav-link">Estampas DTF</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
 
-        <main>
-            <section class="gallery">
-                <div class="gallery-item">
-                    <img src="images/image1.jpg" alt="Imagen 1">
-                    <p>Imagen 1</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/image2.jpg" alt="Imagen 2">
-                    <p>Imagen 2</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/image3.jpg" alt="Imagen 3">
-                    <p>Imagen 3</p>
-                </div>
-            </section>
-        </main>
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <div class="hero-logo">🧵</div>
+            <h1>CHOOM</h1>
+            <p class="hero-tagline">Bienvenido a CHOOM, elige tu diseño</p>
+            <p class="hero-subtitle">Remeras Baggy & Pantalones Jogging Personalizables</p>
+            <button class="btn btn-primary" onclick="document.getElementById('productos').scrollIntoView({ behavior: 'smooth' })">Ver Catálogo</button>
+        </div>
+    </section>
 
-        <footer>
-            <p>&copy; 2026 Mi Portafolio. Todos los derechos reservados.</p>
-        </footer>
-    </div>
+    <!-- Sobre Nosotros -->
+    <section class="about">
+        <div class="container">
+            <h2>Sobre CHOOM</h2>
+            <p>Somos tu tienda de confianza para indumentaria K-pop. Ofrecemos remeras baggy y pantalones jogging de la más alta calidad, con diseños exclusivos y personalizables. ¡Personaliza tu estilo con nuestras estampas DTF!</p>
+        </div>
+    </section>
+
+    <!-- Productos -->
+    <section id="productos" class="productos">
+        <div class="container">
+            <h2>Nuestros Productos</h2>
+            <div class="productos-grid">
+                <!-- Remeras -->
+                <div class="producto-card">
+                    <div class="producto-imagen remeras">👕</div>
+                    <h3>Remeras Baggy</h3>
+                    <p class="descripcion">Remeras oversized cómodas y trendy</p>
+                    <div class="colores">
+                        <span class="color" style="background: #000;" title="Negro"></span>
+                        <span class="color" style="background: #fff; border: 2px solid #ccc;" title="Blanco"></span>
+                        <span class="color" style="background: #e74c3c;" title="Rojo"></span>
+                        <span class="color" style="background: #3498db;" title="Azul"></span>
+                        <span class="color" style="background: #9b59b6;" title="Púrpura"></span>
+                        <span class="color" style="background: #f39c12;" title="Naranja"></span>
+                    </div>
+                    <p class="precio">$4.500</p>
+                    <button class="btn btn-secondary" onclick="contactarWhatsapp('Hola! Me interesa consultar sobre Remeras Baggy CHOOM')">Consultar</button>
+                </div>
+
+                <!-- Pantalones -->
+                <div class="producto-card">
+                    <div class="producto-imagen pantalones">👖</div>
+                    <h3>Pantalones Jogging</h3>
+                    <p class="descripcion">Pantalones cómodos y modernos</p>
+                    <div class="colores">
+                        <span class="color" style="background: #000;" title="Negro"></span>
+                        <span class="color" style="background: #34495e;" title="Gris Oscuro"></span>
+                        <span class="color" style="background: #27ae60;" title="Verde"></span>
+                        <span class="color" style="background: #2980b9;" title="Azul Marino"></span>
+                        <span class="color" style="background: #8e44ad;" title="Púrpura"></span>
+                        <span class="color" style="background: #c0392b;" title="Bordo"></span>
+                    </div>
+                    <p class="precio">$5.200</p>
+                    <button class="btn btn-secondary" onclick="contactarWhatsapp('Hola! Me interesa consultar sobre Pantalones Jogging CHOOM')">Consultar</button>
+                </div>
+
+                <!-- Combo -->
+                <div class="producto-card destacado">
+                    <span class="badge">OFERTA</span>
+                    <div class="producto-imagen combo">👕👖</div>
+                    <h3>Combo Remera + Pantalón</h3>
+                    <p class="descripcion">Ahorra con nuestro combo especial</p>
+                    <p class="precio-original">$9.700</p>
+                    <p class="precio">$8.900</p>
+                    <button class="btn btn-secondary" onclick="contactarWhatsapp('Hola! Me interesa el Combo Remera + Pantalón de CHOOM')">Consultar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estampas DTF -->
+    <section id="estampas" class="estampas">
+        <div class="container">
+            <h2>Estampas DTF - Personaliza tu Indumentaria</h2>
+            <p class="seccion-subtitle">Elige la cantidad de estampas que necesitas</p>
+            
+            <div class="estampas-grid">
+                <!-- Paquete 5 estampas -->
+                <div class="estampa-card">
+                    <h3>📦 Paquete x5</h3>
+                    <p class="cantidad">5 Estampas DTF</p>
+                    <p class="precio">$2.500</p>
+                    <ul class="caracteristicas">
+                        <li>✓ 5 estampas personalizadas</li>
+                        <li>✓ Diseño de calidad DTF</li>
+                        <li>✓ Entrega en 3-5 días</li>
+                    </ul>
+                    <button class="btn btn-secondary" onclick="contactarWhatsapp('Hola! Quiero solicitar el Paquete x5 de Estampas DTF')">Solicitar</button>
+                </div>
+
+                <!-- Paquete 10 estampas -->
+                <div class="estampa-card destacado">
+                    <span class="badge">MÁS POPULAR</span>
+                    <h3>📦 Paquete x10</h3>
+                    <p class="cantidad">10 Estampas DTF</p>
+                    <p class="precio-original">$5.500</p>
+                    <p class="precio">$4.800</p>
+                    <ul class="caracteristicas">
+                        <li>✓ 10 estampas personalizadas</li>
+                        <li>✓ Mayor descuento</li>
+                        <li>✓ Diseño de calidad DTF</li>
+                        <li>✓ Entrega en 3-5 días</li>
+                    </ul>
+                    <button class="btn btn-secondary" onclick="contactarWhatsapp('Hola! Quiero solicitar el Paquete x10 de Estampas DTF')">Solicitar</button>
+                </div>
+
+                <!-- Estampado en local -->
+                <div class="estampa-card">
+                    <h3>🏪 Estampado en Local</h3>
+                    <p class="cantidad">Servicio Premium</p>
+                    <p class="precio">+$800 c/u</p>
+                    <ul class="caracteristicas">
+                        <li>✓ Estampado al instante</li>
+                        <li>✓ Asesoramiento personalizado</li>
+                        <li>✓ Control de calidad</li>
+                        <li>✓ Entrega inmediata</li>
+                    </ul>
+                    <button class="btn btn-secondary" onclick="contactarWhatsapp('Hola! Quiero agendar para estampar en el local')">Agendar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="contacto">
+        <div class="container">
+            <h2>Contactanos</h2>
+            <p class="seccion-subtitle">¿Dudas o consultas? Llena el formulario y nos pondremos en contacto</p>
+            
+            <div class="contacto-content">
+                <form class="contacto-form" onsubmit="enviarFormulario(event)">
+                    <div class="form-group">
+                        <label for="nombre">Nombre *</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="asunto">Asunto *</label>
+                        <select id="asunto" name="asunto" required>
+                            <option value="">-- Selecciona una opción --</option>
+                            <option value="Consulta sobre productos">Consulta sobre productos</option>
+                            <option value="Solicitud de estampas DTF">Solicitud de estampas DTF</option>
+                            <option value="Estampado en local">Estampado en local</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje *</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Enviar Consulta</button>
+                </form>
+
+                <div class="contacto-info">
+                    <div class="info-card">
+                        <i class="fas fa-whatsapp"></i>
+                        <h3>WhatsApp</h3>
+                        <p><a href="https://wa.me/542994578289" target="_blank">+54 9 2994578289</a></p>
+                        <p class="small">Respuesta rápida</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <i class="fas fa-phone"></i>
+                        <h3>Llamadas</h3>
+                        <p>+54 9 2994578289</p>
+                        <p class="small">Lun - Vie 10am-6pm</p>
+                    </div>
+
+                    <div class="info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Ubicación</h3>
+                        <p>Local CHOOM</p>
+                        <p class="small">Neuquén, Argentina</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 CHOOM - Indumentaria K-pop. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="https://wa.me/542994578289" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
