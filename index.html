@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CHOOM - Indumentaria K-pop</title>
+    <title>CHOOM - Indumentaria K-pop Sustentable</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -11,7 +11,7 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="navbar-container">
-            <div class="logo">🧵 CHOOM</div>
+            <div class="logo">CHOOM</div>
             <ul class="nav-menu">
                 <li><a href="#inicio" class="nav-link">Inicio</a></li>
                 <li><a href="#productos" class="nav-link">Productos</a></li>
@@ -23,15 +23,14 @@
 
     <!-- Hero Section -->
     <section id="inicio" class="hero">
-        <div class="hero-content">
-            <div class="hero-logo">🧵</div>
-            <h1 class="hero-title">CHOOM</h1>
-            <div class="hero-tagline-box">
-                <p class="hero-tagline">Bienvenido a CHOOM</p>
-                <p class="hero-tagline-accent">Elige tu diseño</p>
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">CHOOM</h1>
+                <div class="hero-border"></div>
+                <p class="hero-subtitle">Indumentaria sustentable</p>
+                <p class="hero-subtitle">para bailarines K-pop</p>
+                <button class="btn btn-primary" onclick="document.getElementById('productos').scrollIntoView({ behavior: 'smooth' })">Explorar Catálogo</button>
             </div>
-            <p class="hero-subtitle">Remeras Baggy & Pantalones Jogging Personalizables</p>
-            <button class="btn btn-primary" onclick="document.getElementById('productos').scrollIntoView({ behavior: 'smooth' })">Ver Catálogo</button>
         </div>
     </section>
 
@@ -40,20 +39,17 @@
         <div class="container">
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">👕</div>
-                    <h3>Remeras Baggy</h3>
+                    <h3>👕 Remeras Baggy</h3>
                     <p>Oversized cómodas y trendy</p>
                     <p class="price">$4.500</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">👖</div>
-                    <h3>Pantalones Jogging</h3>
+                    <h3>👖 Pantalones Jogging</h3>
                     <p>Cómodos y modernos</p>
                     <p class="price">$5.200</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🎎</div>
-                    <h3>Estampas DTF</h3>
+                    <h3>✨ Estampas DTF</h3>
                     <p>Personaliza tu indumentaria</p>
                     <p class="price">$2.500+</p>
                 </div>
@@ -65,7 +61,7 @@
     <section class="about">
         <div class="container">
             <h2>Sobre CHOOM</h2>
-            <p>Somos tu tienda de confianza para indumentaria K-pop. Ofrecemos remeras baggy y pantalones jogging de la más alta calidad, con diseños exclusivos y personalizables. ¡Personaliza tu estilo con nuestras estampas DTF!</p>
+            <p>Somos una marca sustentable dedicada a crear indumentaria de calidad para bailarines K-pop. Ofrecemos remeras baggy y pantalones jogging eco-friendly, con diseños exclusivos y personalizables. ¡Personaliza tu estilo con nuestras estampas DTF!</p>
         </div>
     </section>
 
@@ -76,16 +72,16 @@
             <div class="productos-grid">
                 <!-- Remeras -->
                 <div class="producto-card">
-                    <div class="producto-imagen remeras">👕</div>
+                    <div class="producto-imagen">👕</div>
                     <h3>Remeras Baggy</h3>
                     <p class="descripcion">Remeras oversized cómodas y trendy</p>
                     <div class="colores">
                         <span class="color" style="background: #000;" title="Negro"></span>
                         <span class="color" style="background: #fff; border: 2px solid #ccc;" title="Blanco"></span>
-                        <span class="color" style="background: #e74c3c;" title="Rojo"></span>
-                        <span class="color" style="background: #3498db;" title="Azul"></span>
-                        <span class="color" style="background: #9b59b6;" title="Púrpura"></span>
-                        <span class="color" style="background: #f39c12;" title="Naranja"></span>
+                        <span class="color" style="background: #2c3e50;" title="Gris Oscuro"></span>
+                        <span class="color" style="background: #34495e;" title="Gris"></span>
+                        <span class="color" style="background: #7f8c8d;" title="Gris Claro"></span>
+                        <span class="color" style="background: #8b7355;" title="Maón"></span>
                     </div>
                     <p class="precio">$4.500</p>
                     <button class="btn btn-secondary" onclick="contactarWhatsapp('Hola! Me interesa consultar sobre Remeras Baggy CHOOM')">Consultar</button>
@@ -93,16 +89,16 @@
 
                 <!-- Pantalones -->
                 <div class="producto-card">
-                    <div class="producto-imagen pantalones">👖</div>
+                    <div class="producto-imagen">👖</div>
                     <h3>Pantalones Jogging</h3>
                     <p class="descripcion">Pantalones cómodos y modernos</p>
                     <div class="colores">
                         <span class="color" style="background: #000;" title="Negro"></span>
+                        <span class="color" style="background: #2c3e50;" title="Azul Oscuro"></span>
                         <span class="color" style="background: #34495e;" title="Gris Oscuro"></span>
-                        <span class="color" style="background: #27ae60;" title="Verde"></span>
-                        <span class="color" style="background: #2980b9;" title="Azul Marino"></span>
-                        <span class="color" style="background: #8e44ad;" title="Púrpura"></span>
-                        <span class="color" style="background: #c0392b;" title="Bordo"></span>
+                        <span class="color" style="background: #5d4e37;" title="Marrón"></span>
+                        <span class="color" style="background: #7f8c8d;" title="Gris"></span>
+                        <span class="color" style="background: #8b7355;" title="Beige"></span>
                     </div>
                     <p class="precio">$5.200</p>
                     <button class="btn btn-secondary" onclick="contactarWhatsapp('Hola! Me interesa consultar sobre Pantalones Jogging CHOOM')">Consultar</button>
@@ -111,7 +107,7 @@
                 <!-- Combo -->
                 <div class="producto-card destacado">
                     <span class="badge">OFERTA</span>
-                    <div class="producto-imagen combo">👕👖</div>
+                    <div class="producto-imagen">👕👖</div>
                     <h3>Combo Remera + Pantalón</h3>
                     <p class="descripcion">Ahorra con nuestro combo especial</p>
                     <p class="precio-original">$9.700</p>
@@ -246,7 +242,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 CHOOM - Indumentaria K-pop. Todos los derechos reservados.</p>
+            <p>&copy; 2026 CHOOM - Indumentaria K-pop Sustentable. Todos los derechos reservados.</p>
             <div class="social-links">
                 <a href="https://wa.me/542994578289" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                 <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
