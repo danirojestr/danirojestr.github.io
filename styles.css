@@ -62,6 +62,7 @@ body {
     color: white;
     text-decoration: none;
     transition: color 0.3s;
+    font-weight: 500;
 }
 
 .nav-link:hover {
@@ -88,6 +89,7 @@ body {
     font-size: 6rem;
     margin-bottom: 1.5rem;
     animation: bounce 2s ease-in-out infinite;
+    display: inline-block;
 }
 
 @keyframes bounce {
@@ -106,23 +108,37 @@ body {
     }
 }
 
-.hero-content h1 {
+.hero-title {
     font-size: 4rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
     font-weight: 800;
     letter-spacing: 2px;
 }
 
-.hero-tagline {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    font-weight: 600;
+.hero-tagline-box {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem 2rem;
+    border-radius: 15px;
+    margin: 1.5rem 0;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
-.hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+.hero-tagline {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.hero-tagline-accent {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0.5rem 0 0 0;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .hero-subtitle {
@@ -132,11 +148,68 @@ body {
     font-style: italic;
 }
 
+/* Features Section */
+.features {
+    background: white;
+    padding: 60px 20px;
+    margin-top: -60px;
+    position: relative;
+    z-index: 10;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.1) 0%, rgba(52, 152, 219, 0.1) 100%);
+    border: 2px solid var(--border-color);
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    border-color: var(--primary-color);
+}
+
+.feature-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    animation: floar 3s ease-in-out infinite;
+}
+
+.feature-card h3 {
+    font-size: 1.3rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.feature-card p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.feature-card .price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-top: 0.5rem;
+}
+
 /* Botones */
 .btn {
     padding: 12px 30px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s;
@@ -146,14 +219,16 @@ body {
 }
 
 .btn-primary {
-    background: var(--primary-color);
-    color: white;
+    background: white;
+    color: var(--primary-color);
+    border: 2px solid white;
 }
 
 .btn-primary:hover {
-    background: #c0392b;
+    background: transparent;
+    color: white;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .btn-secondary {
@@ -169,7 +244,7 @@ body {
 
 /* Sección About */
 .about {
-    background: var(--light-bg);
+    background: linear-gradient(135deg, var(--light-bg) 0%, white 100%);
     padding: 60px 20px;
     text-align: center;
 }
@@ -185,6 +260,7 @@ body {
     max-width: 700px;
     margin: 0 auto;
     color: var(--text-light);
+    line-height: 1.8;
 }
 
 /* Productos */
@@ -208,16 +284,17 @@ body {
 .producto-card {
     background: white;
     border: 2px solid var(--border-color);
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 2rem;
     text-align: center;
     transition: all 0.3s;
     position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .producto-card:hover {
     border-color: var(--primary-color);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     transform: translateY(-5px);
 }
 
@@ -228,14 +305,15 @@ body {
 
 .badge {
     position: absolute;
-    top: -10px;
+    top: -12px;
     left: 20px;
-    background: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color) 0%, #c0392b 100%);
     color: white;
-    padding: 5px 15px;
-    border-radius: 20px;
+    padding: 6px 18px;
+    border-radius: 25px;
     font-size: 0.8rem;
     font-weight: bold;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
 }
 
 .producto-imagen {
@@ -264,6 +342,7 @@ body {
     font-size: 1.5rem;
     margin: 1rem 0;
     color: var(--secondary-color);
+    font-weight: 700;
 }
 
 .producto-card .descripcion {
@@ -284,11 +363,13 @@ body {
     height: 30px;
     border-radius: 50%;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .color:hover {
-    transform: scale(1.2);
+    transform: scale(1.25);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .precio-original {
@@ -335,26 +416,29 @@ body {
     background: white;
     color: var(--text-dark);
     padding: 2rem;
-    border-radius: 10px;
+    border-radius: 15px;
     text-align: center;
     position: relative;
     transition: all 0.3s;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .estampa-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
 }
 
 .estampa-card.destacado {
     border: 3px solid var(--primary-color);
     transform: scale(1.05);
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.05) 0%, rgba(52, 152, 219, 0.05) 100%);
 }
 
 .estampa-card h3 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
     color: var(--secondary-color);
+    font-weight: 700;
 }
 
 .estampa-card .cantidad {
@@ -397,8 +481,8 @@ body {
 .contacto-form {
     background: white;
     padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .form-group {
@@ -416,12 +500,12 @@ body {
 .form-group select,
 .form-group textarea {
     width: 100%;
-    padding: 10px;
-    border: 1px solid var(--border-color);
-    border-radius: 5px;
+    padding: 12px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
     font-family: inherit;
     font-size: 1rem;
-    transition: border-color 0.3s;
+    transition: all 0.3s;
 }
 
 .form-group input:focus,
@@ -429,7 +513,8 @@ body {
 .form-group textarea:focus {
     outline: none;
     border-color: var(--accent-color);
-    box-shadow: 0 0 5px rgba(52, 152, 219, 0.2);
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+    background-color: rgba(52, 152, 219, 0.02);
 }
 
 .contacto-info {
@@ -441,9 +526,16 @@ body {
 .info-card {
     background: white;
     padding: 2rem;
-    border-radius: 10px;
+    border-radius: 15px;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+    border-left: 4px solid var(--primary-color);
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
 }
 
 .info-card i {
@@ -455,6 +547,7 @@ body {
 .info-card h3 {
     margin-bottom: 0.5rem;
     color: var(--secondary-color);
+    font-weight: 700;
 }
 
 .info-card p {
@@ -465,9 +558,11 @@ body {
     color: var(--accent-color);
     text-decoration: none;
     font-weight: 600;
+    transition: color 0.3s;
 }
 
 .info-card a:hover {
+    color: var(--primary-color);
     text-decoration: underline;
 }
 
@@ -498,11 +593,20 @@ body {
 .social-links a {
     color: white;
     font-size: 1.5rem;
-    transition: color 0.3s;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .social-links a:hover {
     color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
 }
 
 /* Responsive */
@@ -526,7 +630,7 @@ body {
         font-size: 4rem;
     }
 
-    .hero-content h1 {
+    .hero-title {
         font-size: 2.5rem;
     }
 
@@ -546,7 +650,8 @@ body {
     }
 
     .productos-grid,
-    .estampas-grid {
+    .estampas-grid,
+    .features-grid {
         grid-template-columns: 1fr;
     }
 
@@ -575,8 +680,12 @@ body {
         font-size: 3rem;
     }
 
-    .hero-content h1 {
+    .hero-title {
         font-size: 1.8rem;
+    }
+
+    .hero-tagline-box {
+        padding: 1rem 1.5rem;
     }
 
     .hero-content p {
