@@ -106,12 +106,12 @@
             if (paqueteJSON) {
                 const paquete = JSON.parse(paqueteJSON);
                 
-                // Construir el mensaje con el paquete y el grupo
+                // Construir el mensaje con el paquete, precio y el grupo
                 if (paquete.cantidad > 0) {
-                    mensaje = `Hola! Quiero hacer una consulta para ${paquete.tipo} paquete x${paquete.cantidad} del grupo ${grupo}`;
+                    mensaje = `Hola! Quiero hacer una consulta para ${paquete.tipo} paquete x${paquete.cantidad} (${paquete.precio}) del grupo ${grupo}`;
                 } else {
                     // Para "Estampado en Local"
-                    mensaje = `Hola! Quiero agendar ${paquete.tipo} para el grupo ${grupo}`;
+                    mensaje = `Hola! Quiero agendar ${paquete.tipo} (${paquete.precio}) para el grupo ${grupo}`;
                 }
                 
                 // Limpiar localStorage
