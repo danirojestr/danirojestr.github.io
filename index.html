@@ -52,7 +52,7 @@
                         <li>✓ Personalización completa</li>
                         <li>✓ Entrega en 3-5 días</li>
                     </ul>
-                    <button class="btn btn-secondary" onclick="window.location.href='estampas.html'">Consultar</button>
+                    <button class="btn btn-secondary" onclick="irAEstampasConPaquete('Estampas Grandes', 3, '$11.200')">Consultar</button>
                 </div>
 
                 <!-- Estampas Medianas x3 -->
@@ -67,7 +67,7 @@
                         <li>✓ Diseño de calidad DTF</li>
                         <li>✓ Entrega en 3-5 días</li>
                     </ul>
-                    <button class="btn btn-secondary" onclick="window.location.href='estampas.html'">Consultar</button>
+                    <button class="btn btn-secondary" onclick="irAEstampasConPaquete('Estampas Medianas', 3, '$5.600')">Consultar</button>
                 </div>
 
                 <!-- Estampas Chicas x5 -->
@@ -81,7 +81,7 @@
                         <li>✓ Diseño de calidad DTF</li>
                         <li>✓ Entrega en 3-5 días</li>
                     </ul>
-                    <button class="btn btn-secondary" onclick="window.location.href='estampas.html'">Consultar</button>
+                    <button class="btn btn-secondary" onclick="irAEstampasConPaquete('Estampas Chicas', 5, '$4.800')">Consultar</button>
                 </div>
 
                 <!-- Estampado en local -->
@@ -95,7 +95,7 @@
                         <li>✓ Control de calidad</li>
                         <li>✓ Entrega inmediata</li>
                     </ul>
-                    <button class="btn btn-secondary" onclick="window.location.href='estampas.html'">Agendar</button>
+                    <button class="btn btn-secondary" onclick="irAEstampasConPaquete('Estampado en Local', 0, '+$800 c/u')">Agendar</button>
                 </div>
             </div>
         </div>
@@ -113,7 +113,18 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        function irAEstampasConPaquete(tipo, cantidad, precio) {
+            // Guardar el tipo de paquete en localStorage
+            localStorage.setItem('paqueteSeleccionado', JSON.stringify({
+                tipo: tipo,
+                cantidad: cantidad,
+                precio: precio
+            }));
+            // Navegar a estampas.html
+            window.location.href = 'estampas.html';
+        }
+    </script>
 </body>
 </html>
 
