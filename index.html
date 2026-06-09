@@ -13,10 +13,10 @@
         <div class="navbar-container">
             <div class="logo">CHOOM</div>
             <ul class="nav-menu">
-                <li><a href="#inicio" class="nav-link">Inicio</a></li>
-                <li><a href="#productos" class="nav-link">Productos</a></li>
-                <li><a href="#estampas" class="nav-link">Estampas DTF</a></li>
-                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                <li><a href="index.html#inicio" class="nav-link">Inicio</a></li>
+                <li><a href="index.html#productos" class="nav-link">Productos</a></li>
+                <li><a href="index.html#estampas" class="nav-link">Estampas DTF</a></li>
+                <li><a href="index.html#contacto" class="nav-link">Contacto</a></li>
             </ul>
         </div>
     </nav>
@@ -29,90 +29,7 @@
                 <div class="hero-border"></div>
                 <p class="hero-subtitle">Indumentaria sustentable</p>
                 <p class="hero-subtitle">para bailarines K-pop</p>
-                <button class="btn btn-primary" onclick="document.getElementById('productos').scrollIntoView({ behavior: 'smooth' })">Explorar Catálogo</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Caracteristicas Rapidas -->
-    <section class="features">
-        <div class="container">
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3>👕 Remeras Baggy</h3>
-                    <p>Oversized cómodas y trendy</p>
-                    <p class="price">$38.000</p>
-                </div>
-                <div class="feature-card">
-                    <h3>👖 Pantalones Jogging</h3>
-                    <p>Cómodos y modernos</p>
-                    <p class="price">$42.000</p>
-                </div>
-                <div class="feature-card" onclick="document.getElementById('estampas').scrollIntoView({ behavior: 'smooth' })" style="cursor: pointer;">
-                    <h3>✨ Más Estampas</h3>
-                    <p>Personaliza tu indumentaria</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sobre Nosotros -->
-    <section class="about">
-        <div class="container">
-            <h2>Sobre CHOOM</h2>
-            <p>Somos una marca sustentable dedicada a crear indumentaria de calidad para bailarines K-pop. Ofrecemos remeras baggy y pantalones jogging eco-friendly, con diseños exclusivos y personalizados que reflejan tu estilo único.</p>
-        </div>
-    </section>
-
-    <!-- Productos -->
-    <section id="productos" class="productos">
-        <div class="container">
-            <h2>Nuestros Productos</h2>
-            <div class="productos-grid">
-                <!-- Remeras -->
-                <div class="producto-card">
-                    <div class="producto-imagen">👕</div>
-                    <h3>Remeras Baggy</h3>
-                    <p class="descripcion">Remeras oversized cómodas y trendy</p>
-                    <div class="colores">
-                        <span class="color" style="background: #000;" title="Negro"></span>
-                        <span class="color" style="background: #fff; border: 2px solid #ccc;" title="Blanco"></span>
-                        <span class="color" style="background: #2c3e50;" title="Gris Oscuro"></span>
-                        <span class="color" style="background: #34495e;" title="Gris"></span>
-                        <span class="color" style="background: #7f8c8d;" title="Gris Claro"></span>
-                        <span class="color" style="background: #8b7355;" title="Maón"></span>
-                    </div>
-                    <p class="precio">$38.000</p>
-                    <button class="btn btn-secondary" onclick="contactarWhatsapp('Hola! Me interesa consultar sobre Remeras Baggy CHOOM')">Consultar</button>
-                </div>
-
-                <!-- Pantalones -->
-                <div class="producto-card">
-                    <div class="producto-imagen">👖</div>
-                    <h3>Pantalones Jogging</h3>
-                    <p class="descripcion">Pantalones cómodos y modernos</p>
-                    <div class="colores">
-                        <span class="color" style="background: #000;" title="Negro"></span>
-                        <span class="color" style="background: #2c3e50;" title="Azul Oscuro"></span>
-                        <span class="color" style="background: #34495e;" title="Gris Oscuro"></span>
-                        <span class="color" style="background: #5d4e37;" title="Marrón"></span>
-                        <span class="color" style="background: #7f8c8d;" title="Gris"></span>
-                        <span class="color" style="background: #8b7355;" title="Beige"></span>
-                    </div>
-                    <p class="precio">$42.000</p>
-                    <button class="btn btn-secondary" onclick="contactarWhatsapp('Hola! Me interesa consultar sobre Pantalones Jogging CHOOM')">Consultar</button>
-                </div>
-
-                <!-- Combo -->
-                <div class="producto-card destacado">
-                    <span class="badge">OFERTA</span>
-                    <div class="producto-imagen">👕👖</div>
-                    <h3>Combo Remera + Pantalón</h3>
-                    <p class="descripcion">Ahorra con nuestro combo especial</p>
-                    <p class="precio-original">$80.000</p>
-                    <p class="precio">$75.000</p>
-                    <button class="btn btn-secondary" onclick="contactarWhatsapp('Hola! Me interesa el Combo Remera + Pantalón de CHOOM')">Consultar</button>
-                </div>
+                <button class="btn btn-primary" onclick="document.getElementById('estampas').scrollIntoView({ behavior: 'smooth' })">Ver Estampas</button>
             </div>
         </div>
     </section>
@@ -181,66 +98,10 @@
                     <button class="btn btn-secondary" onclick="contactarWhatsapp('Hola! Quiero agendar para estampar en el local')">Agendar</button>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Contacto -->
-    <section id="contacto" class="contacto">
-        <div class="container">
-            <h2>Contactanos</h2>
-            <p class="seccion-subtitle">¿Dudas o consultas? Llena el formulario y nos pondremos en contacto</p>
-            
-            <div class="contacto-content">
-                <form class="contacto-form" onsubmit="enviarFormulario(event)">
-                    <div class="form-group">
-                        <label for="nombre">Nombre *</label>
-                        <input type="text" id="nombre" name="nombre" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="telefono">Teléfono</label>
-                        <input type="tel" id="telefono" name="telefono">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="asunto">Asunto *</label>
-                        <select id="asunto" name="asunto" required>
-                            <option value="">-- Selecciona una opción --</option>
-                            <option value="Consulta sobre productos">Consulta sobre productos</option>
-                            <option value="Solicitud de estampas DTF">Solicitud de estampas DTF</option>
-                            <option value="Estampado en local">Estampado en local</option>
-                            <option value="Otro">Otro</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="mensaje">Mensaje *</label>
-                        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Enviar Consulta</button>
-                </form>
-
-                <div class="contacto-info">
-                    <div class="info-card">
-                        <i class="fas fa-whatsapp"></i>
-                        <h3>WhatsApp</h3>
-                        <p><a href="https://wa.me/542994578289" target="_blank">+54 9 2994578289</a></p>
-                        <p class="small">Respuesta rápida</p>
-                    </div>
-
-                    <div class="info-card">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <h3>Ubicación</h3>
-                        <p>Local CHOOM</p>
-                        <p class="small">Córdoba Capital, Argentina</p>
-                    </div>
-                </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <p style="font-size: 18px; margin-bottom: 20px;">¿Buscas diseños personalizados de grupos K-pop?</p>
+                <a href="estampas.html" class="btn btn-primary" style="display: inline-block;">Ver Diseños K-pop</a>
             </div>
         </div>
     </section>
@@ -260,3 +121,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+
