@@ -25,7 +25,7 @@
     <section class="estampas-grupos">
         <div class="container">
             <h1>Elige tu Grupo K-pop Favorito</h1>
-            <p class="seccion-subtitle">Selecciona el grupo para ver disponibilidad de estampas</p>
+            <p class="seccion-subtitle">Selecciona el grupo para completar tu consulta</p>
             
             <div class="grupos-grid">
                 <div class="grupo-card" onclick="seleccionarGrupo('BTS')">
@@ -82,33 +82,6 @@
                     <p>Engene</p>
                 </div>
             </div>
-
-            <!-- Formulario Oculto -->
-            <div id="formulario-paquete" class="formulario-paquete hidden">
-                <div class="formulario-container">
-                    <button class="btn-cerrar" onclick="cerrarFormulario()">✕</button>
-                    <h2 id="grupo-nombre"></h2>
-                    <p>Elige la cantidad de estampas DTF</p>
-                    
-                    <div class="opciones-paquete">
-                        <div class="opcion-card" onclick="seleccionarPaquete(5)">
-                            <h3>Paquete x5</h3>
-                            <p class="cantidad">5 Estampas DTF</p>
-                            <p class="precio">$2.500</p>
-                            <button class="btn btn-primary">Seleccionar</button>
-                        </div>
-
-                        <div class="opcion-card" onclick="seleccionarPaquete(10)">
-                            <h3>Paquete x10</h3>
-                            <p class="cantidad">10 Estampas DTF</p>
-                            <p class="precio-original">$5.500</p>
-                            <p class="precio">$4.800</p>
-                            <p class="descuento">12% descuento</p>
-                            <button class="btn btn-primary">Seleccionar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -125,26 +98,31 @@
     </footer>
 
     <script>
-        let grupoSeleccionado = '';
-        let paqueteSeleccionado = '';
-
         function seleccionarGrupo(grupo) {
-            grupoSeleccionado = grupo;
-            document.getElementById('grupo-nombre').textContent = `Estampas ${grupo}`;
-            document.getElementById('formulario-paquete').classList.remove('hidden');
-        }
+            // Obtener el paquete guardado
+            const paqueteJSON = localStorage.getItem('paqueteSeleccionado');
+            let mensaje = '';
 
-        function cerrarFormulario() {
-            document.getElementById('formulario-paquete').classList.add('hidden');
-            grupoSeleccionado = '';
-            paqueteSeleccionado = '';
-        }
+            if (paqueteJSON) {
+                const paquete = JSON.parse(paqueteJSON);
+                
+                // Construir el mensaje con el paquete y el grupo
+                if (paquete.cantidad > 0) {
+                    mensaje = `Hola! Quiero hacer una consulta para ${paquete.tipo} paquete x${paquete.cantidad} del grupo ${grupo}`;
+                } else {
+                    // Para "Estampado en Local"
+                    mensaje = `Hola! Quiero agendar ${paquete.tipo} para el grupo ${grupo}`;
+                }
+                
+                // Limpiar localStorage
+                localStorage.removeItem('paqueteSeleccionado');
+            } else {
+                // Si no hay paquete guardado (acceso directo)
+                mensaje = `Hola! Quiero solicitar estampas del grupo ${grupo}`;
+            }
 
-        function seleccionarPaquete(cantidad) {
-            paqueteSeleccionado = cantidad;
-            const mensaje = `Hola! Quiero solicitar estampas de ${grupoSeleccionado} - Paquete x${cantidad}`;
+            // Abrir WhatsApp con el mensaje
             contactarWhatsapp(mensaje);
-            cerrarFormulario();
         }
 
         function contactarWhatsapp(mensaje) {
