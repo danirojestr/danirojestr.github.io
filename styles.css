@@ -15,10 +15,27 @@
     --white: #ffffff;
 }
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: var(--text-light);
+    font-family: 'Inter', sans-serif;
+    color: var(--primary-color);
     line-height: 1.6;
-    background: var(--primary-color);
+    background: var(--light-bg);
+    font-weight: 400;
+}
+
+h1 {
+    font-weight: 800;
+    letter-spacing: -0.04em;
+}
+
+h2, h3 {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.small-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
 }
 
 .container {
