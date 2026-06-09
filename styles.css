@@ -5,13 +5,15 @@
 }
 
 :root {
-    --primary-color: #1f1b1a;
---secondary-color: #6a625b;
---accent-color: #94a07d;
---light-bg: #f4f1e8;
---border-color: #d8d1c5;
+    --primary-color: #2b2624;      /* negro cálido */
+    --secondary-color: #5a534e;    /* gris cálido */
+    --accent-color: #8b9a72;       /* verde salvia */
+    --text-light: #f5f2ea;         /* papel */
+    --text-muted: #8c857d;         /* gris editorial */
+    --light-bg: #f7f4ed;           /* fondo principal */
+    --border-color: #cfc7bc;       /* líneas técnicas */
+    --white: #ffffff;
 }
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--text-light);
